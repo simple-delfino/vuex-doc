@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>모듈 | Vuex</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="../../logo.png">
+    <link rel="apple-touch-icon" href="../../icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="../../icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="Vue.js의 중앙 상태 관리">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <link rel="preload" href="../../assets/css/0.styles.55154880.css" as="style"><link rel="preload" href="../../assets/js/app.53cca24e.js" as="script"><link rel="preload" href="../../assets/js/3.e1daaf9a.js" as="script"><link rel="preload" href="../../assets/js/60.1c4ad599.js" as="script"><link rel="prefetch" href="../../assets/js/10.376ff2d9.js"><link rel="prefetch" href="../../assets/js/100.428ab9d9.js"><link rel="prefetch" href="../../assets/js/101.b3abb77d.js"><link rel="prefetch" href="../../assets/js/102.7b5aa580.js"><link rel="prefetch" href="../../assets/js/103.761866ef.js"><link rel="prefetch" href="../../assets/js/104.68d82289.js"><link rel="prefetch" href="../../assets/js/105.11d5cb6d.js"><link rel="prefetch" href="../../assets/js/106.0dadce6e.js"><link rel="prefetch" href="../../assets/js/107.99f0323a.js"><link rel="prefetch" href="../../assets/js/108.9a88c7f4.js"><link rel="prefetch" href="../../assets/js/109.af518395.js"><link rel="prefetch" href="../../assets/js/11.a8dcb05e.js"><link rel="prefetch" href="../../assets/js/110.f01582a9.js"><link rel="prefetch" href="../../assets/js/111.a66b1412.js"><link rel="prefetch" href="../../assets/js/112.f85dcb68.js"><link rel="prefetch" href="../../assets/js/113.4d5cc78f.js"><link rel="prefetch" href="../../assets/js/12.a2743193.js"><link rel="prefetch" href="../../assets/js/13.50b41798.js"><link rel="prefetch" href="../../assets/js/14.8c44cf57.js"><link rel="prefetch" href="../../assets/js/15.4d5f9c01.js"><link rel="prefetch" href="../../assets/js/16.9de6a707.js"><link rel="prefetch" href="../../assets/js/17.3c11c755.js"><link rel="prefetch" href="../../assets/js/18.767f3d43.js"><link rel="prefetch" href="../../assets/js/19.4c3de7e6.js"><link rel="prefetch" href="../../assets/js/20.ab861199.js"><link rel="prefetch" href="../../assets/js/21.dfa008d5.js"><link rel="prefetch" href="../../assets/js/22.1a778d42.js"><link rel="prefetch" href="../../assets/js/23.15264e3a.js"><link rel="prefetch" href="../../assets/js/24.736c8703.js"><link rel="prefetch" href="../../assets/js/25.32003dc4.js"><link rel="prefetch" href="../../assets/js/26.2cdc533a.js"><link rel="prefetch" href="../../assets/js/27.ae64e762.js"><link rel="prefetch" href="../../assets/js/28.11ea5c11.js"><link rel="prefetch" href="../../assets/js/29.189fa756.js"><link rel="prefetch" href="../../assets/js/30.ffedd861.js"><link rel="prefetch" href="../../assets/js/31.49c1b68f.js"><link rel="prefetch" href="../../assets/js/32.3bfeb9a8.js"><link rel="prefetch" href="../../assets/js/33.31c98796.js"><link rel="prefetch" href="../../assets/js/34.2dc53290.js"><link rel="prefetch" href="../../assets/js/35.ece332b3.js"><link rel="prefetch" href="../../assets/js/36.8a40bd5b.js"><link rel="prefetch" href="../../assets/js/37.0b50403c.js"><link rel="prefetch" href="../../assets/js/38.2b876028.js"><link rel="prefetch" href="../../assets/js/39.cb547820.js"><link rel="prefetch" href="../../assets/js/4.bbb322bd.js"><link rel="prefetch" href="../../assets/js/40.ea4575e5.js"><link rel="prefetch" href="../../assets/js/41.beca9b64.js"><link rel="prefetch" href="../../assets/js/42.ac65c4b7.js"><link rel="prefetch" href="../../assets/js/43.02267867.js"><link rel="prefetch" href="../../assets/js/44.429dbd86.js"><link rel="prefetch" href="../../assets/js/45.771082bc.js"><link rel="prefetch" href="../../assets/js/46.44422dec.js"><link rel="prefetch" href="../../assets/js/47.d7f608f0.js"><link rel="prefetch" href="../../assets/js/48.0cdea2a4.js"><link rel="prefetch" href="../../assets/js/49.2ca8574c.js"><link rel="prefetch" href="../../assets/js/5.0b0a33e2.js"><link rel="prefetch" href="../../assets/js/50.9ddeb1ff.js"><link rel="prefetch" href="../../assets/js/51.e06bc137.js"><link rel="prefetch" href="../../assets/js/52.4e842b76.js"><link rel="prefetch" href="../../assets/js/53.5e23468c.js"><link rel="prefetch" href="../../assets/js/54.730615e1.js"><link rel="prefetch" href="../../assets/js/55.6338aa61.js"><link rel="prefetch" href="../../assets/js/56.aa236328.js"><link rel="prefetch" href="../../assets/js/57.28b1d4f5.js"><link rel="prefetch" href="../../assets/js/58.10bc6dc3.js"><link rel="prefetch" href="../../assets/js/59.b478a5e2.js"><link rel="prefetch" href="../../assets/js/6.e08d3b5e.js"><link rel="prefetch" href="../../assets/js/61.c4a9f17e.js"><link rel="prefetch" href="../../assets/js/62.b5b3ed3d.js"><link rel="prefetch" href="../../assets/js/63.f22d173b.js"><link rel="prefetch" href="../../assets/js/64.4b1c9601.js"><link rel="prefetch" href="../../assets/js/65.d6176def.js"><link rel="prefetch" href="../../assets/js/66.9aed1291.js"><link rel="prefetch" href="../../assets/js/67.003f0c10.js"><link rel="prefetch" href="../../assets/js/68.dc89fd95.js"><link rel="prefetch" href="../../assets/js/69.ded141eb.js"><link rel="prefetch" href="../../assets/js/7.95d09c63.js"><link rel="prefetch" href="../../assets/js/70.45be10fa.js"><link rel="prefetch" href="../../assets/js/71.554e520f.js"><link rel="prefetch" href="../../assets/js/72.b6be6e31.js"><link rel="prefetch" href="../../assets/js/73.9ccf74b0.js"><link rel="prefetch" href="../../assets/js/74.c9c04c01.js"><link rel="prefetch" href="../../assets/js/75.6847d163.js"><link rel="prefetch" href="../../assets/js/76.0b26e11d.js"><link rel="prefetch" href="../../assets/js/77.e9a1f39a.js"><link rel="prefetch" href="../../assets/js/78.c5cff927.js"><link rel="prefetch" href="../../assets/js/79.751ab737.js"><link rel="prefetch" href="../../assets/js/8.53650e16.js"><link rel="prefetch" href="../../assets/js/80.ffd14385.js"><link rel="prefetch" href="../../assets/js/81.167d013a.js"><link rel="prefetch" href="../../assets/js/82.fa4c2cc7.js"><link rel="prefetch" href="../../assets/js/83.7ce23f60.js"><link rel="prefetch" href="../../assets/js/84.4197d013.js"><link rel="prefetch" href="../../assets/js/85.47ee5117.js"><link rel="prefetch" href="../../assets/js/86.4268d05e.js"><link rel="prefetch" href="../../assets/js/87.26a89531.js"><link rel="prefetch" href="../../assets/js/88.a45851d1.js"><link rel="prefetch" href="../../assets/js/89.1534283b.js"><link rel="prefetch" href="../../assets/js/9.e10d3f1f.js"><link rel="prefetch" href="../../assets/js/90.7bc36bb9.js"><link rel="prefetch" href="../../assets/js/91.f5f49de8.js"><link rel="prefetch" href="../../assets/js/92.e4bc33f9.js"><link rel="prefetch" href="../../assets/js/93.4e012260.js"><link rel="prefetch" href="../../assets/js/94.9ddd7240.js"><link rel="prefetch" href="../../assets/js/95.2e992eb4.js"><link rel="prefetch" href="../../assets/js/96.12e3e2d4.js"><link rel="prefetch" href="../../assets/js/97.f2fa4e27.js"><link rel="prefetch" href="../../assets/js/98.87a314ac.js"><link rel="prefetch" href="../../assets/js/99.cc99e556.js"><link rel="prefetch" href="../../assets/js/vendors~docsearch.7e7c1afb.js">
+    <link rel="stylesheet" href="../../assets/css/0.styles.55154880.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="../index.html" class="home-link router-link-active"><!----> <span class="site-name">Vuex</span></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><a href="index.html" class="nav-link router-link-active">
+  가이드
+</a></div><div class="nav-item"><a href="../api/index.html" class="nav-link">
+  API 레퍼런스
+</a></div><div class="nav-item"><a href="https://github.com/vuejs/vuex/releases" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  릴리즈 노트
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">언어 변경</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">언어 변경</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="../../guide/modules.html" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="../../zh/guide/modules.html" class="nav-link">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="../../ja/guide/modules.html" class="nav-link">
+  日本語
+</a></li><li class="dropdown-item"><!----> <a href="../../ru/guide/modules.html" class="nav-link">
+  Русский
+</a></li><li class="dropdown-item"><!----> <a href="modules.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  한국어
+</a></li><li class="dropdown-item"><!----> <a href="../../ptbr/guide/modules.html" class="nav-link">
+  Português
+</a></li><li class="dropdown-item"><!----> <a href="../../fr/guide/modules.html" class="nav-link">
+  Français
+</a></li></ul></div></div> <a href="https://github.com/vuejs/vuex" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="index.html" class="nav-link router-link-active">
+  가이드
+</a></div><div class="nav-item"><a href="../api/index.html" class="nav-link">
+  API 레퍼런스
+</a></div><div class="nav-item"><a href="https://github.com/vuejs/vuex/releases" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  릴리즈 노트
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">언어 변경</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">언어 변경</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="../../guide/modules.html" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="../../zh/guide/modules.html" class="nav-link">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="../../ja/guide/modules.html" class="nav-link">
+  日本語
+</a></li><li class="dropdown-item"><!----> <a href="../../ru/guide/modules.html" class="nav-link">
+  Русский
+</a></li><li class="dropdown-item"><!----> <a href="modules.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  한국어
+</a></li><li class="dropdown-item"><!----> <a href="../../ptbr/guide/modules.html" class="nav-link">
+  Português
+</a></li><li class="dropdown-item"><!----> <a href="../../fr/guide/modules.html" class="nav-link">
+  Français
+</a></li></ul></div></div> <a href="https://github.com/vuejs/vuex" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav> <div class="carbon-ads"></div> <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Introduction</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="../index.html" aria-current="page" class="sidebar-link">Vuex가 무엇인가요?</a></li><li><a href="../installation.html" class="sidebar-link">설치</a></li><li><a href="index.html" aria-current="page" class="sidebar-link">시작하기</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>핵심 컨셉</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="state.html" class="sidebar-link">상태</a></li><li><a href="getters.html" class="sidebar-link">Getters</a></li><li><a href="mutations.html" class="sidebar-link">변이</a></li><li><a href="actions.html" class="sidebar-link">액션</a></li><li><a href="modules.html" aria-current="page" class="active sidebar-link">모듈</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Advanced</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="structure.html" class="sidebar-link">애플리케이션 구조</a></li><li><a href="plugins.html" class="sidebar-link">플러그인</a></li><li><a href="strict.html" class="sidebar-link">Strict 모드</a></li><li><a href="forms.html" class="sidebar-link">폼 핸들링</a></li><li><a href="testing.html" class="sidebar-link">테스팅</a></li><li><a href="hot-reload.html" class="sidebar-link">핫 리로딩</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="모듈"><a href="#%E1%84%86%E1%85%A9%E1%84%83%E1%85%B2%E1%86%AF" class="header-anchor">#</a> 모듈</h1> <div class="scrimba"><a href="https://scrimba.com/p/pnyzgAP/cqKK4psq" target="_blank" rel="noopener noreferrer">Scrimba에서이 수업을 해보십시오.</a></div> <p>단일 상태 트리를 사용하기 때문에 애플리케이션의 모든 상태가 하나의 큰 객체 안에 포함됩니다. 그러나 규모가 커짐에 따라 저장소는 매우 비대해질 수 있습니다.</p> <p>이를 위해 Vuex는 저장소를 <strong>모듈</strong> 로 나눌 수 있습니다. 각 모듈은 자체 상태, 변이, 액션, 게터 및 심지어 중첩된 모듈을 포함 할 수 있습니다.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> moduleA <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">state</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  mutations<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  actions<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  getters<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> moduleB <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">state</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  mutations<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  actions<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vuex<span class="token punctuation">.</span>Store</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  modules<span class="token operator">:</span> <span class="token punctuation">{</span>
+    a<span class="token operator">:</span> moduleA<span class="token punctuation">,</span>
+    b<span class="token operator">:</span> moduleB
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>a <span class="token comment">// -&gt; moduleA'의 상태</span>
+store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>b <span class="token comment">// -&gt; moduleB'의 상태</span>
+</code></pre></div><h3 id="지역-상태-모듈"><a href="#%E1%84%8C%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%A8-%E1%84%89%E1%85%A1%E1%86%BC%E1%84%90%E1%85%A2-%E1%84%86%E1%85%A9%E1%84%83%E1%85%B2%E1%86%AF" class="header-anchor">#</a> 지역 상태 모듈</h3> <p>모듈의 변이와 getter 내부에서 첫 번째 전달인자는 <strong>모듈의 지역 상태</strong> 가됩니다.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> moduleA <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">state</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+    count<span class="token operator">:</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  mutations<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">increment</span> <span class="token punctuation">(</span><span class="token parameter">state</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// state는 지역 모듈 상태 입니다</span>
+      state<span class="token punctuation">.</span>count<span class="token operator">++</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  getters<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">doubleCount</span> <span class="token punctuation">(</span><span class="token parameter">state</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> state<span class="token punctuation">.</span>count <span class="token operator">*</span> <span class="token number">2</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>유사하게 모듈 내부에서 <code>context.state</code>는 지역 상태를 노출시킬 것이고 루트 상태는 <code>context.rootState</code>로 노출 될 것입니다.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> moduleA <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+  actions<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">incrementIfOddOnRootSum</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> state<span class="token punctuation">,</span> commit<span class="token punctuation">,</span> rootState <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>count <span class="token operator">+</span> rootState<span class="token punctuation">.</span>count<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">'increment'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>또한, 모듈 getters 내부, 루트 상태는 그들의 세 번째 전달인자로 노출됩니다.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> moduleA <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+  getters<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">sumWithRootCount</span> <span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> getters<span class="token punctuation">,</span> rootState</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> state<span class="token punctuation">.</span>count <span class="token operator">+</span> rootState<span class="token punctuation">.</span>count
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="네임스페이스"><a href="#%E1%84%82%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%89%E1%85%B3%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3" class="header-anchor">#</a> 네임스페이스</h3> <p>기본적으로 모듈 내의 액션, 변이 및 getter는 여전히 <strong>전역 네임 스페이스</strong> 아래에 등록됩니다. 여러 모듈이 동일한 변이/액션 유형에 반응 할 수 있습니다.</p> <p>만약 모듈이 독립적이거나 재사용되기를 원한다면, <code>namespaced: true</code>라고 네임스페이스에 명시하면 됩니다. 모듈이 등록될 때, 해당 모듈의 모든 getter, 액션/변이는 자동으로 등록된 모듈의 경로를 기반으로 네임스페이스가 지정됩니다. 아래는 예시입니다:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vuex<span class="token punctuation">.</span>Store</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  modules<span class="token operator">:</span> <span class="token punctuation">{</span>
+    account<span class="token operator">:</span> <span class="token punctuation">{</span>
+      namespaced<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
+      <span class="token comment">// 모듈 자산</span>
+      <span class="token function-variable function">state</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// 모듈 상태는 이미 중첩되어 있고, 네임스페이스 옵션의 영향을 받지 않음</span>
+      getters<span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token function">isAdmin</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token comment">// -&gt; getters['account/isAdmin']</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      actions<span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token function">login</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token comment">// -&gt; dispatch('account/login')</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      mutations<span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token function">login</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token comment">// -&gt; commit('account/login')</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+      <span class="token comment">// 중첩 모듈</span>
+      modules<span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 부모 모듈로부터 네임스페이스를 상속받음</span>
+        myPage<span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token function-variable function">state</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+          getters<span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token function">profile</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token comment">// -&gt; getters['account/profile']</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+        <span class="token comment">// 네임스페이스를 더 중첩</span>
+        posts<span class="token operator">:</span> <span class="token punctuation">{</span>
+          namespaced<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
+          <span class="token function-variable function">state</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+          getters<span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token function">popular</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token comment">// -&gt; getters['account/posts/popular']</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>네임스페이스의 getter와 액션은 지역화된  <code>getters</code>, <code>dispatch</code> 그리고 <code>commit</code>을 받습니다. 즉, 동일한 모듈 안에서 접두어 없이 모듈 자산을 사용할 수 있습니다. 네임스페이스 옵션 값을 바꾸어도 모듈 내부의 코드에는 영향을 미치지 않습니다.</p> <h4 id="네임스페이스-모듈-내부에서-전역-자산-접근"><a href="#%E1%84%82%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%89%E1%85%B3%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3-%E1%84%86%E1%85%A9%E1%84%83%E1%85%B2%E1%86%AF-%E1%84%82%E1%85%A2%E1%84%87%E1%85%AE%E1%84%8B%E1%85%A6%E1%84%89%E1%85%A5-%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%A8-%E1%84%8C%E1%85%A1%E1%84%89%E1%85%A1%E1%86%AB-%E1%84%8C%E1%85%A5%E1%86%B8%E1%84%80%E1%85%B3%E1%86%AB" class="header-anchor">#</a> 네임스페이스 모듈 내부에서 전역 자산 접근</h4> <p>전역 상태나 getter를 사용하고자 한다면, <code>rootState</code>와 <code>rootGetters</code>가 getter 함수의 3번째와 4번째 인자로 전달되고, 또한 action 함수에 전달된 'context' 객체의 속성으로도 노출됩니다.</p> <p>전역 네임스페이스의 액션을 디스패치하거나 변이를 커밋하려면 <code>dispatch</code>와 <code>commit</code>에 3번째 인자로 <code>{ root: true }</code>를 전달하면 됩니다.</p> <div class="language-js extra-class"><pre class="language-js"><code>modules<span class="token operator">:</span> <span class="token punctuation">{</span>
+  foo<span class="token operator">:</span> <span class="token punctuation">{</span>
+    namespaced<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
+    getters<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token comment">// `getters`는 해당 모듈의 지역화된 getters</span>
+      <span class="token comment">// getters의 4번째 인자를 통해서 rootGetters 사용 가능</span>
+      <span class="token function">someGetter</span> <span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> getters<span class="token punctuation">,</span> rootState<span class="token punctuation">,</span> rootGetters</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        getters<span class="token punctuation">.</span>someOtherGetter <span class="token comment">// -&gt; 'foo/someOtherGetter'</span>
+        rootGetters<span class="token punctuation">.</span>someOtherGetter <span class="token comment">// -&gt; 'someOtherGetter'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token function-variable function">someOtherGetter</span><span class="token operator">:</span> <span class="token parameter">state</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    actions<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 디스패치와 커밋도 해당 모듈의 지역화된 것</span>
+      <span class="token comment">// 전역 디스패치/커밋을 위한 `root` 옵션 설정 가능</span>
+      <span class="token function">someAction</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> dispatch<span class="token punctuation">,</span> commit<span class="token punctuation">,</span> getters<span class="token punctuation">,</span> rootGetters <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        getters<span class="token punctuation">.</span>someGetter <span class="token comment">// -&gt; 'foo/someGetter'</span>
+        rootGetters<span class="token punctuation">.</span>someGetter <span class="token comment">// -&gt; 'someGetter'</span>
+
+        <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token string">'someOtherAction'</span><span class="token punctuation">)</span> <span class="token comment">// -&gt; 'foo/someOtherAction'</span>
+        <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token string">'someOtherAction'</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> root<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// -&gt; 'someOtherAction'</span>
+
+        <span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">'someMutation'</span><span class="token punctuation">)</span> <span class="token comment">// -&gt; 'foo/someMutation'</span>
+        <span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">'someMutation'</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> root<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// -&gt; 'someMutation'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token function">someOtherAction</span> <span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span> payload</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="네임스페이스-모듈에서-전역-액션-등록"><a href="#%E1%84%82%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%89%E1%85%B3%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3-%E1%84%86%E1%85%A9%E1%84%83%E1%85%B2%E1%86%AF%E1%84%8B%E1%85%A6%E1%84%89%E1%85%A5-%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%A8-%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%89%E1%85%A7%E1%86%AB-%E1%84%83%E1%85%B3%E1%86%BC%E1%84%85%E1%85%A9%E1%86%A8" class="header-anchor">#</a> 네임스페이스 모듈에서 전역 액션 등록</h4> <p>네임스페이스 모듈에서 전역 액션을 등록하려면, <code>root: true</code>를 표시하고 <code>handler</code> 함수에 액션을 정의하면 됩니다. 아래는 예시입니다:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+  actions<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">someOtherAction</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span>dispatch<span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token string">'someAction'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  modules<span class="token operator">:</span> <span class="token punctuation">{</span>
+    foo<span class="token operator">:</span> <span class="token punctuation">{</span>
+      namespaced<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
+      actions<span class="token operator">:</span> <span class="token punctuation">{</span>
+        someAction<span class="token operator">:</span> <span class="token punctuation">{</span>
+          root<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token function">handler</span> <span class="token punctuation">(</span><span class="token parameter">namespacedContext<span class="token punctuation">,</span> payload</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token comment">// -&gt; 'someAction'</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="헬퍼에서-네임스페이스-바인딩"><a href="#%E1%84%92%E1%85%A6%E1%86%AF%E1%84%91%E1%85%A5%E1%84%8B%E1%85%A6%E1%84%89%E1%85%A5-%E1%84%82%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%89%E1%85%B3%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3-%E1%84%87%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B5%E1%86%BC" class="header-anchor">#</a> 헬퍼에서 네임스페이스 바인딩</h4> <p><code>mapState</code>, <code>mapGetters</code>, <code>mapActions</code> 그리고 <code>mapMutations</code> 헬퍼에서 네임스페이스 모듈을 컴포넌트에 바인딩 할 때 조금 장황하게 됩니다.</p> <div class="language-js extra-class"><pre class="language-js"><code>computed<span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span><span class="token function">mapState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token function-variable function">a</span><span class="token operator">:</span> <span class="token parameter">state</span> <span class="token operator">=&gt;</span> state<span class="token punctuation">.</span>some<span class="token punctuation">.</span>nested<span class="token punctuation">.</span>module<span class="token punctuation">.</span>a<span class="token punctuation">,</span>
+    <span class="token function-variable function">b</span><span class="token operator">:</span> <span class="token parameter">state</span> <span class="token operator">=&gt;</span> state<span class="token punctuation">.</span>some<span class="token punctuation">.</span>nested<span class="token punctuation">.</span>module<span class="token punctuation">.</span>b
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span><span class="token function">mapActions</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token string">'some/nested/module/foo'</span><span class="token punctuation">,</span> <span class="token comment">// -&gt; this['some/nested/module/foo']()</span>
+    <span class="token string">'some/nested/module/bar'</span> <span class="token comment">// -&gt; this['some/nested/module/bar']()</span>
+  <span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>이러한 경우에는 모듈의 네임스페이스 문자열을 헬퍼의 첫 번째 인수로 전달하여 해당 모듈을 컨텍스트로 사용하여 모든 바인딩을 할 수 있습니다. 위의 예시는 아래와 같이 단순화 할 수 있습니다.</p> <div class="language-js extra-class"><pre class="language-js"><code>computed<span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span><span class="token function">mapState</span><span class="token punctuation">(</span><span class="token string">'some/nested/module'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">a</span><span class="token operator">:</span> <span class="token parameter">state</span> <span class="token operator">=&gt;</span> state<span class="token punctuation">.</span>a<span class="token punctuation">,</span>
+    <span class="token function-variable function">b</span><span class="token operator">:</span> <span class="token parameter">state</span> <span class="token operator">=&gt;</span> state<span class="token punctuation">.</span>b
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span><span class="token function">mapActions</span><span class="token punctuation">(</span><span class="token string">'some/nested/module'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>
+    <span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token comment">// -&gt; this.foo()</span>
+    <span class="token string">'bar'</span> <span class="token comment">// -&gt; this.bar()</span>
+  <span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>또한 <code>createNamespacedHelpers</code>를 사용하여 네임스페이스 헬퍼를 생성할 수 있습니다. 전달된 네임스페이스 값으로 바인딩된 새로운 컴포넌트 바인딩 헬퍼를 가진 객체를 반환합니다.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> createNamespacedHelpers <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vuex'</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">{</span> mapState<span class="token punctuation">,</span> mapActions <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">createNamespacedHelpers</span><span class="token punctuation">(</span><span class="token string">'some/nested/module'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  computed<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// `some/nested/module`에서 찾음</span>
+    <span class="token operator">...</span><span class="token function">mapState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token function-variable function">a</span><span class="token operator">:</span> <span class="token parameter">state</span> <span class="token operator">=&gt;</span> state<span class="token punctuation">.</span>a<span class="token punctuation">,</span>
+      <span class="token function-variable function">b</span><span class="token operator">:</span> <span class="token parameter">state</span> <span class="token operator">=&gt;</span> state<span class="token punctuation">.</span>b
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// `some/nested/module`에서 찾음</span>
+    <span class="token operator">...</span><span class="token function">mapActions</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+      <span class="token string">'foo'</span><span class="token punctuation">,</span>
+      <span class="token string">'bar'</span>
+    <span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="플러그인-개발자를-위한-주의-사항"><a href="#%E1%84%91%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A5%E1%84%80%E1%85%B3%E1%84%8B%E1%85%B5%E1%86%AB-%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%8C%E1%85%A1%E1%84%85%E1%85%B3%E1%86%AF-%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB-%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%B4-%E1%84%89%E1%85%A1%E1%84%92%E1%85%A1%E1%86%BC" class="header-anchor">#</a> 플러그인 개발자를 위한 주의 사항</h4> <p>개발자가 개발한 특정 모듈을 위해서 만든 <a href="plugins.html">플러그인</a>을 사용자가 Vuex 저장소에 등록할 때 예측할 수 없는 네임스페이스 오류를 주의해야 합니다. 플러그인 사용자가 특정 모듈을 네임스페이스 모듈 하위에 추가하면 해당 모듈도 동일한 네임스페이스로 등록됩니다. 이러한 상황을 피하기 위해서 플러그인 옵션을 통해 네임스페이스 값을 전달받을 수 있어야 합니다.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 플러그인 옵션을 통해 네임스페이스 값 전달</span>
+<span class="token comment">// 그리고 Vuex 플러그인 함수를 반환</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">createPlugin</span> <span class="token punctuation">(</span><span class="token parameter">options <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">store</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// add namespace to plugin module's types</span>
+    <span class="token keyword">const</span> namespace <span class="token operator">=</span> options<span class="token punctuation">.</span>namespace <span class="token operator">||</span> <span class="token string">''</span>
+    store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span>namespace <span class="token operator">+</span> <span class="token string">'pluginAction'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="동적-모듈-등록"><a href="#%E1%84%83%E1%85%A9%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%A8-%E1%84%86%E1%85%A9%E1%84%83%E1%85%B2%E1%86%AF-%E1%84%83%E1%85%B3%E1%86%BC%E1%84%85%E1%85%A9%E1%86%A8" class="header-anchor">#</a> 동적 모듈 등록</h3> <p><code>store.registerModule</code> 메소드로 저장소가 생성 된 <strong>후에</strong> 모듈을 등록 할 수 있습니다.</p> <div class="language-js extra-class"><pre class="language-js"><code>store<span class="token punctuation">.</span><span class="token function">registerModule</span><span class="token punctuation">(</span><span class="token string">'myModule'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// `nested/myModule` 중첩 모듈 등록</span>
+store<span class="token punctuation">.</span><span class="token function">registerModule</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'nested'</span><span class="token punctuation">,</span> <span class="token string">'myModule'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>모듈의 상태는<code>store.state.myModule</code>와 <code>store.state.nested.myModule</code>로 노출 됩니다.</p> <p>동적 모듈 등록을 사용하면 다른 Vue 플러그인도 애플리케이션의 저장소에 모듈을 연결하여 상태 관리에 Vuex를 활용할 수 있습니다. 예를 들어 <a href="https://github.com/vuejs/vuex-router-sync" target="_blank" rel="noopener noreferrer"><code>vuex-router-sync</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 라이브러리는 동적으로 연결된 모듈에서 애플리케이션의 라우트 상태를 관리하여 vue-router와 vuex를 통합합니다.</p> <p><code>store.unregisterModule(moduleName)</code>을 사용하여 동적으로 등록 된 모듈을 제거할 수도 있습니다. 이 방법으로는 정적 모듈(저장소 생성시 선언 됨)을 제거 할 수 없습니다.</p> <p>Server Side Rendered 앱에서 상태를 유지하는 것처럼 새 모듈을 등록할 때 이전 상태를 유지하고자 할 수 있습니다. <code>preserveState</code> 옵션을 사용하면 그렇게 할 수 있습니다: <code>store.registerModule('a', module, { preserveState: true })</code></p> <h3 id="모듈-재사용"><a href="#%E1%84%86%E1%85%A9%E1%84%83%E1%85%B2%E1%86%AF-%E1%84%8C%E1%85%A2%E1%84%89%E1%85%A1%E1%84%8B%E1%85%AD%E1%86%BC" class="header-anchor">#</a> 모듈 재사용</h3> <p>때로는 한 모듈에서 여러 인스턴스를 생성해야 할 수도 있습니다. 예를 들자면 다음과 같습니다:</p> <ul><li>동일 모듈을 사용하는 여러 저장소 생성 (예. <a href="https://ssr.vuejs.org/en/structure.html#avoid-stateful-singletons" target="_blank" rel="noopener noreferrer">SSR 에서 싱글톤 상태 피하기<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 에서 <code>runInNewContext</code> 옵션이 <code>false</code>나 <code>once</code>일 때)</li> <li>동일 모듈을 동일 저장소에 여러 번 등록</li></ul> <p>일반 객체를 사용하여 모듈의 상태를 선언하면 상태 객체가 참조에 의해 공유되고 변이 될 때 교차 저장소/모듈의 상태 오염을 일으킵니다.</p> <p>이것은 실제로 Vue 컴포넌트 내부의 <code>data</code>와 완전히 동일한 문제입니다. 그래서 해결책도 역시 동일합니다. 함수를 사용하여 모듈 상태를 선언합니다. (2.3.0 부터 지원함)</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> MyReusableModule <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">state</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+    foo<span class="token operator">:</span> <span class="token string">'bar'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token comment">// 변이, 액션, getters...</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="actions.html" class="prev">
+        액션
+      </a></span> <span class="next"><a href="structure.html">
+        애플리케이션 구조
+      </a>
+      →
+    </span></p></div> <div class="bsa-cpc-wrapper"><div class="bsa-cpc"></div></div></main></div><div class="global-ui"></div></div>
+    <script src="../../assets/js/app.53cca24e.js" defer></script><script src="../../assets/js/3.e1daaf9a.js" defer></script><script src="../../assets/js/60.1c4ad599.js" defer></script>
+  </body>
+</html>

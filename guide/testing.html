@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Testing | Vuex</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="../logo.png">
+    <link rel="apple-touch-icon" href="../icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="Centralized State Management for Vue.js">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <link rel="preload" href="../assets/css/0.styles.55154880.css" as="style"><link rel="preload" href="../assets/js/app.53cca24e.js" as="script"><link rel="preload" href="../assets/js/3.e1daaf9a.js" as="script"><link rel="preload" href="../assets/js/35.ece332b3.js" as="script"><link rel="prefetch" href="../assets/js/10.376ff2d9.js"><link rel="prefetch" href="../assets/js/100.428ab9d9.js"><link rel="prefetch" href="../assets/js/101.b3abb77d.js"><link rel="prefetch" href="../assets/js/102.7b5aa580.js"><link rel="prefetch" href="../assets/js/103.761866ef.js"><link rel="prefetch" href="../assets/js/104.68d82289.js"><link rel="prefetch" href="../assets/js/105.11d5cb6d.js"><link rel="prefetch" href="../assets/js/106.0dadce6e.js"><link rel="prefetch" href="../assets/js/107.99f0323a.js"><link rel="prefetch" href="../assets/js/108.9a88c7f4.js"><link rel="prefetch" href="../assets/js/109.af518395.js"><link rel="prefetch" href="../assets/js/11.a8dcb05e.js"><link rel="prefetch" href="../assets/js/110.f01582a9.js"><link rel="prefetch" href="../assets/js/111.a66b1412.js"><link rel="prefetch" href="../assets/js/112.f85dcb68.js"><link rel="prefetch" href="../assets/js/113.4d5cc78f.js"><link rel="prefetch" href="../assets/js/12.a2743193.js"><link rel="prefetch" href="../assets/js/13.50b41798.js"><link rel="prefetch" href="../assets/js/14.8c44cf57.js"><link rel="prefetch" href="../assets/js/15.4d5f9c01.js"><link rel="prefetch" href="../assets/js/16.9de6a707.js"><link rel="prefetch" href="../assets/js/17.3c11c755.js"><link rel="prefetch" href="../assets/js/18.767f3d43.js"><link rel="prefetch" href="../assets/js/19.4c3de7e6.js"><link rel="prefetch" href="../assets/js/20.ab861199.js"><link rel="prefetch" href="../assets/js/21.dfa008d5.js"><link rel="prefetch" href="../assets/js/22.1a778d42.js"><link rel="prefetch" href="../assets/js/23.15264e3a.js"><link rel="prefetch" href="../assets/js/24.736c8703.js"><link rel="prefetch" href="../assets/js/25.32003dc4.js"><link rel="prefetch" href="../assets/js/26.2cdc533a.js"><link rel="prefetch" href="../assets/js/27.ae64e762.js"><link rel="prefetch" href="../assets/js/28.11ea5c11.js"><link rel="prefetch" href="../assets/js/29.189fa756.js"><link rel="prefetch" href="../assets/js/30.ffedd861.js"><link rel="prefetch" href="../assets/js/31.49c1b68f.js"><link rel="prefetch" href="../assets/js/32.3bfeb9a8.js"><link rel="prefetch" href="../assets/js/33.31c98796.js"><link rel="prefetch" href="../assets/js/34.2dc53290.js"><link rel="prefetch" href="../assets/js/36.8a40bd5b.js"><link rel="prefetch" href="../assets/js/37.0b50403c.js"><link rel="prefetch" href="../assets/js/38.2b876028.js"><link rel="prefetch" href="../assets/js/39.cb547820.js"><link rel="prefetch" href="../assets/js/4.bbb322bd.js"><link rel="prefetch" href="../assets/js/40.ea4575e5.js"><link rel="prefetch" href="../assets/js/41.beca9b64.js"><link rel="prefetch" href="../assets/js/42.ac65c4b7.js"><link rel="prefetch" href="../assets/js/43.02267867.js"><link rel="prefetch" href="../assets/js/44.429dbd86.js"><link rel="prefetch" href="../assets/js/45.771082bc.js"><link rel="prefetch" href="../assets/js/46.44422dec.js"><link rel="prefetch" href="../assets/js/47.d7f608f0.js"><link rel="prefetch" href="../assets/js/48.0cdea2a4.js"><link rel="prefetch" href="../assets/js/49.2ca8574c.js"><link rel="prefetch" href="../assets/js/5.0b0a33e2.js"><link rel="prefetch" href="../assets/js/50.9ddeb1ff.js"><link rel="prefetch" href="../assets/js/51.e06bc137.js"><link rel="prefetch" href="../assets/js/52.4e842b76.js"><link rel="prefetch" href="../assets/js/53.5e23468c.js"><link rel="prefetch" href="../assets/js/54.730615e1.js"><link rel="prefetch" href="../assets/js/55.6338aa61.js"><link rel="prefetch" href="../assets/js/56.aa236328.js"><link rel="prefetch" href="../assets/js/57.28b1d4f5.js"><link rel="prefetch" href="../assets/js/58.10bc6dc3.js"><link rel="prefetch" href="../assets/js/59.b478a5e2.js"><link rel="prefetch" href="../assets/js/6.e08d3b5e.js"><link rel="prefetch" href="../assets/js/60.1c4ad599.js"><link rel="prefetch" href="../assets/js/61.c4a9f17e.js"><link rel="prefetch" href="../assets/js/62.b5b3ed3d.js"><link rel="prefetch" href="../assets/js/63.f22d173b.js"><link rel="prefetch" href="../assets/js/64.4b1c9601.js"><link rel="prefetch" href="../assets/js/65.d6176def.js"><link rel="prefetch" href="../assets/js/66.9aed1291.js"><link rel="prefetch" href="../assets/js/67.003f0c10.js"><link rel="prefetch" href="../assets/js/68.dc89fd95.js"><link rel="prefetch" href="../assets/js/69.ded141eb.js"><link rel="prefetch" href="../assets/js/7.95d09c63.js"><link rel="prefetch" href="../assets/js/70.45be10fa.js"><link rel="prefetch" href="../assets/js/71.554e520f.js"><link rel="prefetch" href="../assets/js/72.b6be6e31.js"><link rel="prefetch" href="../assets/js/73.9ccf74b0.js"><link rel="prefetch" href="../assets/js/74.c9c04c01.js"><link rel="prefetch" href="../assets/js/75.6847d163.js"><link rel="prefetch" href="../assets/js/76.0b26e11d.js"><link rel="prefetch" href="../assets/js/77.e9a1f39a.js"><link rel="prefetch" href="../assets/js/78.c5cff927.js"><link rel="prefetch" href="../assets/js/79.751ab737.js"><link rel="prefetch" href="../assets/js/8.53650e16.js"><link rel="prefetch" href="../assets/js/80.ffd14385.js"><link rel="prefetch" href="../assets/js/81.167d013a.js"><link rel="prefetch" href="../assets/js/82.fa4c2cc7.js"><link rel="prefetch" href="../assets/js/83.7ce23f60.js"><link rel="prefetch" href="../assets/js/84.4197d013.js"><link rel="prefetch" href="../assets/js/85.47ee5117.js"><link rel="prefetch" href="../assets/js/86.4268d05e.js"><link rel="prefetch" href="../assets/js/87.26a89531.js"><link rel="prefetch" href="../assets/js/88.a45851d1.js"><link rel="prefetch" href="../assets/js/89.1534283b.js"><link rel="prefetch" href="../assets/js/9.e10d3f1f.js"><link rel="prefetch" href="../assets/js/90.7bc36bb9.js"><link rel="prefetch" href="../assets/js/91.f5f49de8.js"><link rel="prefetch" href="../assets/js/92.e4bc33f9.js"><link rel="prefetch" href="../assets/js/93.4e012260.js"><link rel="prefetch" href="../assets/js/94.9ddd7240.js"><link rel="prefetch" href="../assets/js/95.2e992eb4.js"><link rel="prefetch" href="../assets/js/96.12e3e2d4.js"><link rel="prefetch" href="../assets/js/97.f2fa4e27.js"><link rel="prefetch" href="../assets/js/98.87a314ac.js"><link rel="prefetch" href="../assets/js/99.cc99e556.js"><link rel="prefetch" href="../assets/js/vendors~docsearch.7e7c1afb.js">
+    <link rel="stylesheet" href="../assets/css/0.styles.55154880.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="../index.html" class="home-link router-link-active"><!----> <span class="site-name">Vuex</span></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><a href="index.html" class="nav-link router-link-active">
+  Guide
+</a></div><div class="nav-item"><a href="../api/index.html" class="nav-link">
+  API Reference
+</a></div><div class="nav-item"><a href="https://github.com/vuejs/vuex/releases" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Release Notes
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="testing.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="../zh/guide/testing.html" class="nav-link">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="../ja/guide/testing.html" class="nav-link">
+  日本語
+</a></li><li class="dropdown-item"><!----> <a href="../ru/guide/testing.html" class="nav-link">
+  Русский
+</a></li><li class="dropdown-item"><!----> <a href="../kr/guide/testing.html" class="nav-link">
+  한국어
+</a></li><li class="dropdown-item"><!----> <a href="../ptbr/guide/testing.html" class="nav-link">
+  Português
+</a></li><li class="dropdown-item"><!----> <a href="../fr/guide/testing.html" class="nav-link">
+  Français
+</a></li></ul></div></div> <a href="https://github.com/vuejs/vuex" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="index.html" class="nav-link router-link-active">
+  Guide
+</a></div><div class="nav-item"><a href="../api/index.html" class="nav-link">
+  API Reference
+</a></div><div class="nav-item"><a href="https://github.com/vuejs/vuex/releases" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Release Notes
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="testing.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="../zh/guide/testing.html" class="nav-link">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="../ja/guide/testing.html" class="nav-link">
+  日本語
+</a></li><li class="dropdown-item"><!----> <a href="../ru/guide/testing.html" class="nav-link">
+  Русский
+</a></li><li class="dropdown-item"><!----> <a href="../kr/guide/testing.html" class="nav-link">
+  한국어
+</a></li><li class="dropdown-item"><!----> <a href="../ptbr/guide/testing.html" class="nav-link">
+  Português
+</a></li><li class="dropdown-item"><!----> <a href="../fr/guide/testing.html" class="nav-link">
+  Français
+</a></li></ul></div></div> <a href="https://github.com/vuejs/vuex" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav> <div class="carbon-ads"></div> <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Introduction</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="../index.html" aria-current="page" class="sidebar-link">What is Vuex?</a></li><li><a href="../installation.html" class="sidebar-link">Installation</a></li><li><a href="index.html" aria-current="page" class="sidebar-link">Getting Started</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Core Concepts</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="state.html" class="sidebar-link">State</a></li><li><a href="getters.html" class="sidebar-link">Getters</a></li><li><a href="mutations.html" class="sidebar-link">Mutations</a></li><li><a href="actions.html" class="sidebar-link">Actions</a></li><li><a href="modules.html" class="sidebar-link">Modules</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Advanced</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="structure.html" class="sidebar-link">Application Structure</a></li><li><a href="plugins.html" class="sidebar-link">Plugins</a></li><li><a href="strict.html" class="sidebar-link">Strict Mode</a></li><li><a href="forms.html" class="sidebar-link">Form Handling</a></li><li><a href="testing.html" aria-current="page" class="active sidebar-link">Testing</a><ul class="sidebar-sub-headers"></ul></li><li><a href="hot-reload.html" class="sidebar-link">Hot Reloading</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="testing"><a href="#testing" class="header-anchor">#</a> Testing</h1> <div class="scrimba"><a href="https://scrimba.com/p/pnyzgAP/cPGkpJhq" target="_blank" rel="noopener noreferrer">Try this lesson on Scrimba</a></div> <p>The main parts we want to unit test in Vuex are mutations and actions.</p> <h3 id="testing-mutations"><a href="#testing-mutations" class="header-anchor">#</a> Testing Mutations</h3> <p>Mutations are very straightforward to test, because they are just functions that completely rely on their arguments. One trick is that if you are using ES2015 modules and put your mutations inside your <code>store.js</code> file, in addition to the default export, you should also export the mutations as a named export:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> state <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+
+<span class="token comment">// export `mutations` as a named export</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> mutations <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">new</span> <span class="token class-name">Vuex<span class="token punctuation">.</span>Store</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  state<span class="token punctuation">,</span>
+  mutations
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>Example testing a mutation using Mocha + Chai (you can use any framework/assertion libraries you like):</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// mutations.js</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> mutations <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">increment</span><span class="token operator">:</span> <span class="token parameter">state</span> <span class="token operator">=&gt;</span> state<span class="token punctuation">.</span>count<span class="token operator">++</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// mutations.spec.js</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> expect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'chai'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> mutations <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./store'</span>
+
+<span class="token comment">// destructure assign `mutations`</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> increment <span class="token punctuation">}</span> <span class="token operator">=</span> mutations
+
+<span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'mutations'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'INCREMENT'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// mock state</span>
+    <span class="token keyword">const</span> state <span class="token operator">=</span> <span class="token punctuation">{</span> count<span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span>
+    <span class="token comment">// apply mutation</span>
+    <span class="token function">increment</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span>
+    <span class="token comment">// assert result</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>count<span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="testing-actions"><a href="#testing-actions" class="header-anchor">#</a> Testing Actions</h3> <p>Actions can be a bit more tricky because they may call out to external APIs. When testing actions, we usually need to do some level of mocking - for example, we can abstract the API calls into a service and mock that service inside our tests. In order to easily mock dependencies, we can use webpack and <a href="https://github.com/plasticine/inject-loader" target="_blank" rel="noopener noreferrer">inject-loader<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> to bundle our test files.</p> <p>Example testing an async action:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// actions.js</span>
+<span class="token keyword">import</span> shop <span class="token keyword">from</span> <span class="token string">'../api/shop'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">getAllProducts</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> commit <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">'REQUEST_PRODUCTS'</span><span class="token punctuation">)</span>
+  shop<span class="token punctuation">.</span><span class="token function">getProducts</span><span class="token punctuation">(</span><span class="token parameter">products</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">'RECEIVE_PRODUCTS'</span><span class="token punctuation">,</span> products<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// actions.spec.js</span>
+
+<span class="token comment">// use require syntax for inline loaders.</span>
+<span class="token comment">// with inject-loader, this returns a module factory</span>
+<span class="token comment">// that allows us to inject mocked dependencies.</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> expect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'chai'</span>
+<span class="token keyword">const</span> actionsInjector <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'inject-loader!./actions'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// create the module with our mocks</span>
+<span class="token keyword">const</span> actions <span class="token operator">=</span> <span class="token function">actionsInjector</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token string">'../api/shop'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">getProducts</span> <span class="token punctuation">(</span><span class="token parameter">cb</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">cb</span><span class="token punctuation">(</span><span class="token punctuation">[</span> <span class="token comment">/* mocked response */</span> <span class="token punctuation">]</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// helper for testing action with expected mutations</span>
+<span class="token keyword">const</span> <span class="token function-variable function">testAction</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">action<span class="token punctuation">,</span> payload<span class="token punctuation">,</span> state<span class="token punctuation">,</span> expectedMutations<span class="token punctuation">,</span> done</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> count <span class="token operator">=</span> <span class="token number">0</span>
+
+  <span class="token comment">// mock commit</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">commit</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">type<span class="token punctuation">,</span> payload</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> mutation <span class="token operator">=</span> expectedMutations<span class="token punctuation">[</span>count<span class="token punctuation">]</span>
+
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>type<span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>mutation<span class="token punctuation">.</span>type<span class="token punctuation">)</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>payload<span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">.</span>deep<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>mutation<span class="token punctuation">.</span>payload<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">done</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    count<span class="token operator">++</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>count <span class="token operator">&gt;=</span> expectedMutations<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// call the action with mocked store and arguments</span>
+  <span class="token function">action</span><span class="token punctuation">(</span><span class="token punctuation">{</span> commit<span class="token punctuation">,</span> state <span class="token punctuation">}</span><span class="token punctuation">,</span> payload<span class="token punctuation">)</span>
+
+  <span class="token comment">// check if no mutations should have been dispatched</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>expectedMutations<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'actions'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'getAllProducts'</span><span class="token punctuation">,</span> <span class="token parameter">done</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">testAction</span><span class="token punctuation">(</span>actions<span class="token punctuation">.</span>getAllProducts<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'REQUEST_PRODUCTS'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'RECEIVE_PRODUCTS'</span><span class="token punctuation">,</span> payload<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token comment">/* mocked response */</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span> done<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>If you have spies available in your testing environment (for example via <a href="http://sinonjs.org/" target="_blank" rel="noopener noreferrer">Sinon.JS<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>), you can use them instead of the <code>testAction</code> helper:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'actions'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'getAllProducts'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> commit <span class="token operator">=</span> sinon<span class="token punctuation">.</span><span class="token function">spy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> state <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    
+    actions<span class="token punctuation">.</span><span class="token function">getAllProducts</span><span class="token punctuation">(</span><span class="token punctuation">{</span> commit<span class="token punctuation">,</span> state <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    
+    <span class="token function">expect</span><span class="token punctuation">(</span>commit<span class="token punctuation">.</span>args<span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">.</span>deep<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+      <span class="token punctuation">[</span><span class="token string">'REQUEST_PRODUCTS'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">[</span><span class="token string">'RECEIVE_PRODUCTS'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token comment">/* mocked response */</span> <span class="token punctuation">}</span><span class="token punctuation">]</span>
+    <span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="testing-getters"><a href="#testing-getters" class="header-anchor">#</a> Testing Getters</h3> <p>If your getters have complicated computation, it is worth testing them. Getters are also very straightforward to test for the same reason as mutations.</p> <p>Example testing a getter:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// getters.js</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> getters <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function">filteredProducts</span> <span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> <span class="token punctuation">{</span> filterCategory <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> state<span class="token punctuation">.</span>products<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">product</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> product<span class="token punctuation">.</span>category <span class="token operator">===</span> filterCategory
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// getters.spec.js</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> expect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'chai'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> getters <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./getters'</span>
+
+<span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'getters'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'filteredProducts'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// mock state</span>
+    <span class="token keyword">const</span> state <span class="token operator">=</span> <span class="token punctuation">{</span>
+      products<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> title<span class="token operator">:</span> <span class="token string">'Apple'</span><span class="token punctuation">,</span> category<span class="token operator">:</span> <span class="token string">'fruit'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> title<span class="token operator">:</span> <span class="token string">'Orange'</span><span class="token punctuation">,</span> category<span class="token operator">:</span> <span class="token string">'fruit'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span> title<span class="token operator">:</span> <span class="token string">'Carrot'</span><span class="token punctuation">,</span> category<span class="token operator">:</span> <span class="token string">'vegetable'</span> <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// mock getter</span>
+    <span class="token keyword">const</span> filterCategory <span class="token operator">=</span> <span class="token string">'fruit'</span>
+
+    <span class="token comment">// get the result from the getter</span>
+    <span class="token keyword">const</span> result <span class="token operator">=</span> getters<span class="token punctuation">.</span><span class="token function">filteredProducts</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> <span class="token punctuation">{</span> filterCategory <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// assert the result</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">.</span>deep<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+      <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> title<span class="token operator">:</span> <span class="token string">'Apple'</span><span class="token punctuation">,</span> category<span class="token operator">:</span> <span class="token string">'fruit'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> title<span class="token operator">:</span> <span class="token string">'Orange'</span><span class="token punctuation">,</span> category<span class="token operator">:</span> <span class="token string">'fruit'</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="running-tests"><a href="#running-tests" class="header-anchor">#</a> Running Tests</h3> <p>If your mutations and actions are written properly, the tests should have no direct dependency on Browser APIs after proper mocking. Thus you can simply bundle the tests with webpack and run it directly in Node. Alternatively, you can use <code>mocha-loader</code> or Karma + <code>karma-webpack</code> to run the tests in real browsers.</p> <h4 id="running-in-node"><a href="#running-in-node" class="header-anchor">#</a> Running in Node</h4> <p>Create the following webpack config (together with proper <a href="https://babeljs.io/docs/usage/babelrc/" target="_blank" rel="noopener noreferrer"><code>.babelrc</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>):</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// webpack.config.js</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  entry<span class="token operator">:</span> <span class="token string">'./test.js'</span><span class="token punctuation">,</span>
+  output<span class="token operator">:</span> <span class="token punctuation">{</span>
+    path<span class="token operator">:</span> __dirname<span class="token punctuation">,</span>
+    filename<span class="token operator">:</span> <span class="token string">'test-bundle.js'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  module<span class="token operator">:</span> <span class="token punctuation">{</span>
+    loaders<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        test<span class="token operator">:</span> <span class="token regex">/\.js$/</span><span class="token punctuation">,</span>
+        loader<span class="token operator">:</span> <span class="token string">'babel-loader'</span><span class="token punctuation">,</span>
+        exclude<span class="token operator">:</span> <span class="token regex">/node_modules/</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Then:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>webpack
+mocha test-bundle.js
+</code></pre></div><h4 id="running-in-browser"><a href="#running-in-browser" class="header-anchor">#</a> Running in Browser</h4> <ol><li>Install <code>mocha-loader</code>.</li> <li>Change the <code>entry</code> from the webpack config above to <code>'mocha-loader!babel-loader!./test.js'</code>.</li> <li>Start <code>webpack-dev-server</code> using the config.</li> <li>Go to <code>localhost:8080/webpack-dev-server/test-bundle</code>.</li></ol> <h4 id="running-in-browser-with-karma-karma-webpack"><a href="#running-in-browser-with-karma-karma-webpack" class="header-anchor">#</a> Running in Browser with Karma + karma-webpack</h4> <p>Consult the setup in <a href="https://vue-loader.vuejs.org/en/workflow/testing.html" target="_blank" rel="noopener noreferrer">vue-loader documentation<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>.</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="forms.html" class="prev">
+        Form Handling
+      </a></span> <span class="next"><a href="hot-reload.html">
+        Hot Reloading
+      </a>
+      →
+    </span></p></div> <div class="bsa-cpc-wrapper"><div class="bsa-cpc"></div></div></main></div><div class="global-ui"></div></div>
+    <script src="../assets/js/app.53cca24e.js" defer></script><script src="../assets/js/3.e1daaf9a.js" defer></script><script src="../assets/js/35.ece332b3.js" defer></script>
+  </body>
+</html>
